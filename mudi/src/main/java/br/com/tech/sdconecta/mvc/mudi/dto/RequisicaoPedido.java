@@ -1,6 +1,7 @@
 package br.com.tech.sdconecta.mvc.mudi.dto;
 
 import br.com.tech.sdconecta.mvc.mudi.model.Pedido;
+import br.com.tech.sdconecta.mvc.mudi.model.StatusPedido;
 import jakarta.validation.constraints.NotBlank;
 
 public class RequisicaoPedido {
@@ -51,7 +52,7 @@ public class RequisicaoPedido {
         pedido.setProductName(productName);
         pedido.setImageUrl(imageUrl);
         pedido.setProductUrl(productUrl);
-
+        pedido.setStatus(StatusPedido.AGUARDANDO);
         return pedido;
     }
 }

@@ -1,9 +1,6 @@
 package br.com.tech.sdconecta.mvc.mudi.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -21,6 +18,8 @@ public class Pedido {
     private String productUrl;
     private String imageUrl;
     private String description;
+    @Enumerated(EnumType.STRING)
+    private StatusPedido status;
 
     public String getProductName() {
         return productName;
@@ -68,5 +67,13 @@ public class Pedido {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public StatusPedido getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusPedido status) {
+        this.status = status;
     }
 }
